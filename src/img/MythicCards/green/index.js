@@ -1,114 +1,41 @@
-import greenCardsAssets from '../../../assets/MythicCards/green';
+import green1 from './green1.png';
+import green2 from './green2.png';
+import green3 from './green3.png';
+import green4 from './green4.png';
+import green5 from './green5.png';
+import green6 from './green6.png';
+import green7 from './green7.png';
+import green8 from './green8.png';
+import green9 from './green9.png';
+import green10 from './green10.png';
+import green11 from './green11.png';
+import green12 from './green12.png';
+import green13 from './green13.png';
+import green14 from './green14.png';
+import green15 from './green15.png';
+import green16 from './green16.png';
+import green17 from './green17.png';
+import green18 from './green18.png';
 
-const cardsData = [
-  {
-    id: 'green1',
-    cardFace: greenCardsAssets.green1,
-    difficulty: 'easy',
-    color:'green'
-  },
-  {
-    id: 'green2',
-    cardFace: greenCardsAssets.green2,
-    difficulty: 'hard',
-    color:'green'
-  },
-  {
-    id: 'green3',
-    cardFace: greenCardsAssets.green3,
-    difficulty: 'hard',
-    color:'green'
-  },
-  {
-    id: 'green4',
-    cardFace: greenCardsAssets.green4,
-    difficulty: 'hard',
-    color:'green'
-  },
-  {
-    id: 'green5',
-    cardFace: greenCardsAssets.green5,
-    difficulty: 'hard',
-    color:'green'
-  },
-  {
-    id: 'green6',
-    cardFace: greenCardsAssets.green6,
-    difficulty: 'hard',
-    color:'green'
-  },
-  {
-    id: 'green7',
-    cardFace: greenCardsAssets.green7,
-    difficulty: 'normal',
-    color:'green'
-  },
-  {
-    id: 'green8',
-    cardFace: greenCardsAssets.green8,
-    difficulty: 'normal',
-    color:'green'
-  },
-  {
-    id: 'green9',
-    cardFace: greenCardsAssets.green9,
-    difficulty: 'normal',
-    color:'green'
-  },
-  {
-    id: 'green10',
-    cardFace: greenCardsAssets.green10,
-    difficulty: 'normal',
-    color:'green'
-  },
-  {
-    id: 'green11',
-    cardFace: greenCardsAssets.green11,
-    difficulty: 'normal',
-    color:'green'
-  },
-  {
-    id: 'green12',
-    cardFace: greenCardsAssets.green12,
-    difficulty: 'easy',
-    color:'green'
-  },
-  {
-    id: 'green13',
-    cardFace: greenCardsAssets.green13,
-    difficulty: 'normal',
-    color:'green'
-  },
-  {
-    id: 'green14',
-    cardFace: greenCardsAssets.green14,
-    difficulty: 'normal',
-    color:'green'
-  },
-  {
-    id: 'green15',
-    cardFace: greenCardsAssets.green15,
-    difficulty: 'normal',
-    color:'green'
-  },
-  {
-    id: 'green16',
-    cardFace: greenCardsAssets.green16,
-    difficulty: 'easy',
-    color:'green'
-  },
-  {
-    id: 'green17',
-    cardFace: greenCardsAssets.green17,
-    difficulty: 'easy',
-    color:'green'
-  },
-  {
-    id: 'green18',
-    cardFace: greenCardsAssets.green18,
-    difficulty: 'easy',
-    color:'green'
-  },
-]
+const cards = {
+  green1,
+  green2,
+  green3,
+  green4,
+  green5,
+  green6,
+  green7,
+  green8,
+  green9,
+  green10,
+  green11,
+  green12,
+  green13,
+  green14,
+  green15,
+  green16,
+  green17,
+  green18,
+};
 
-export default cardsData
+export default cards;
