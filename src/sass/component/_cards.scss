@@ -1,0 +1,59 @@
+.play__cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cards__count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.count__items {
+  display: flex;
+  gap: 10px
+}
+
+.count__item {
+  padding: 7px 25px;
+  border-radius: 5px;
+  color: white;
+  font-size: 27px;
+}
+
+.count__item.green {
+  background: #adb28f96;
+}
+
+.count__item.yellow {
+  background: #c9b8869e;
+}
+
+.count__item.blue {
+  background: #9499c69e;
+  ;
+}
+
+.cards__card-backs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-backs__img {
+  width: 70%;
+}
+
+.cards__card-ups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-ups__img {
+  width: 70%;
+}
