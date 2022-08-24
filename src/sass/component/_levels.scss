@@ -1,0 +1,21 @@
+.play__levels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.play__level {
+  padding: 10px;
+  background: #00000036;
+  border-radius: 5px;
+  color: white;
+  font-size: 33px;
+  cursor: pointer;
+}
+
+.play__levelss {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}

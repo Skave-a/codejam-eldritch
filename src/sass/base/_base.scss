@@ -1,0 +1,18 @@
+body {
+  background: url(../img/home-2.jpg)
+}
+
+.play {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: 1%;
+}
+
+.none {
+  visibility: hidden;
+}
+
+.d-none {
+  display: none;
+}
