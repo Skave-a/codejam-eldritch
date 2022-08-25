@@ -82,7 +82,7 @@ const ancientsData = [
 ]
 
 
-const blueCardsData = [
+let blueCardsData = [
   {
     id: 'blue1',
     //cardFace: blueCardsAssets.blue1,
@@ -402,10 +402,9 @@ const greenCardsData = [
 
 
 
-const cardsOfMonster = document.querySelectorAll('.play__item');
+const cardsOfMonster = document.querySelectorAll('.item__card');
 const playLevels = document.querySelector('.play__levels');
 const playLevelsAll = document.querySelectorAll('.play__level');
-
 //const cardAzathoth = document.querySelector('.item__card.Azathoth');
 const cardsCount = document.querySelector('.cards__count');
 const cardsBack = document.querySelector('.cards__card-backs');
@@ -426,6 +425,11 @@ let firstBlue = document.querySelector('.count__item.first.blue');
 let secondBlue = document.querySelector('.count__item.second.blue');
 let thirdBlue = document.querySelector('.count__item.third.blue');
 
+const playLevelVEasy = document.querySelectorAll('.play__level.very-easy');
+const playLevelEasy = document.querySelectorAll('.play__level.easy');
+const playLevelMedium = document.querySelectorAll('.play__level.medium');
+const playLevelHigh = document.querySelectorAll('.play__level.high');
+const playLevelVHigh = document.querySelectorAll('.play__level.very-high');
 
 
 function chooseMonster() {
@@ -433,10 +437,12 @@ function chooseMonster() {
     item.addEventListener('click', () => {
       cardsOfMonster.forEach((el) => {
         el.style.border = "none";
+        el.style.boxShadow = "none";
       })
       //console.log(i)
       playLevels.classList.remove("none");
-      item.style.border = "solid 3px red";
+      item.style.border = "3px solid #122a54";
+      item.style.boxShadow = "0 0 15px rgb(123 205 199)";
 
       firstGreen.textContent = ancientsData[i].firstStage.greenCards;
       secondGreen.textContent = ancientsData[i].secondStage.greenCards;
@@ -452,7 +458,7 @@ function chooseMonster() {
       //console.log(ancientsData[i].firstStage.greenCards)
 
       countCards()
-
+      cardsUp.innerHTML = ''
     })
   })
 }
@@ -469,15 +475,32 @@ function chooseLevel() {
       //console.log(i)
       playLevelsAll.forEach((el) => {
         el.style.border = "none";
+        el.style.boxShadow = "none";
       })
       cardsCount.classList.remove("none");
       cardsBack.classList.remove("none");
-      item.style.border = "solid 3px red";
+      item.style.border = "3px solid #122a54";
+      item.style.boxShadow = "0 0 15px rgb(123 205 199)";
       //console.log(i)
       // cardsBackImg.addEventListener('click', () => {
 
       //   cardsUp.innerHTML = `<img src="src/assets/MythicCards/blue/blue1.png" alt="card-up" class="card-ups__img">`
       // })
+      if (item.textContent == "Easy") {
+        console.log(blueCardsData)
+        for (let j = 0; j < blueCardsData.length; j++) {
+          for (let key in blueCardsData[i]) {
+            //console.log(blueCardsData[i][key])
+
+            if (blueCardsData[i][key] == 'hard') {
+              console.log(blueCardsData.indexOf(blueCardsData[i]))
+              blueCardsData.splice(blueCardsData.indexOf(blueCardsData[i]), 1)
+            }
+          }
+        }
+        console.log(blueCardsData)
+
+      }
     })
   })
 
@@ -493,6 +516,12 @@ function countCards() {
   let countGreenCard = +firstGreen.textContent + +secondGreen.textContent + +thirdGreen.textContent;
   let countYellowCard = +firstYellow.textContent + +secondYellow.textContent + +thirdYellow.textContent;
   let countOfCard = countBlueCard + countGreenCard + countYellowCard;
+
+
+
+
+
+
 
   function getRandomBlue(min = 0, max = blueCardsData.length) {
     let arr = [];
@@ -519,7 +548,6 @@ function countCards() {
 
   function getRandomYellow(min = 0, max = brownCardsData.length) {
     let arr = [];
-    //if (playLevels.children[2].textContent)
     for (let i = 0; i < countYellowCard; i++) {
       min = Math.ceil(min);
       max = Math.floor(max);
@@ -583,6 +611,8 @@ function countCards() {
     }
     if (shuffled.length > 1) {
       shuffled.shift()
+      //console.log(` слайс ${shuffled}`)
+
     }
     if (shuffled.length == 1) {
       cardsBackImg.classList.add('backs')
@@ -590,4 +620,4 @@ function countCards() {
   })
 }
 
-countCards()
+//countCards()
