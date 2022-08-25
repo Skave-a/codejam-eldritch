@@ -22,6 +22,11 @@ body {
   display: none;
 }
 
+.backs {
+  cursor: auto;
+  opacity: 0.5;
+}
+
 .play__cards {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -405,6 +405,7 @@ const greenCardsData = [
 const cardsOfMonster = document.querySelectorAll('.play__item');
 const playLevels = document.querySelector('.play__levels');
 const playLevelsAll = document.querySelectorAll('.play__level');
+
 //const cardAzathoth = document.querySelector('.item__card.Azathoth');
 const cardsCount = document.querySelector('.cards__count');
 const cardsBack = document.querySelector('.cards__card-backs');
@@ -473,14 +474,10 @@ function chooseLevel() {
       cardsBack.classList.remove("none");
       item.style.border = "solid 3px red";
       //console.log(i)
-      cardsBackImg.addEventListener('click', () => {
-        //console.log(`2-${i}`)
+      // cardsBackImg.addEventListener('click', () => {
 
-        if (i == 2) {
-          //console.log('3')
-          cardsUp.innerHTML = `<img src="${blue1}" alt="card-up" class="card-ups__img">`
-        }
-      })
+      //   cardsUp.innerHTML = `<img src="src/assets/MythicCards/blue/blue1.png" alt="card-up" class="card-ups__img">`
+      // })
     })
   })
 
@@ -522,6 +519,7 @@ function countCards() {
 
   function getRandomYellow(min = 0, max = brownCardsData.length) {
     let arr = [];
+    //if (playLevels.children[2].textContent)
     for (let i = 0; i < countYellowCard; i++) {
       min = Math.ceil(min);
       max = Math.floor(max);
@@ -530,7 +528,66 @@ function countCards() {
     }
     return arr;
   }
-
   let arrOfCards = getRandomGreen().concat(getRandomYellow(), getRandomBlue())
-  console.log(arrOfCards.sort(() => Math.random() - 0.5))
+  var shuffled = arrOfCards.sort(() => Math.random() - 0.5);
+  //console.log(shuffled)
+  cardsBackImg.addEventListener('click', () => {
+    let imgCard = shuffled[0];
+    console.log(imgCard)
+    cardsUp.innerHTML = `<img src="src/assets/MythicCards/${imgCard}.png" alt="card-up" class="card-ups__img">`;
+    if (/^blue/.test(imgCard)) {
+      //console.log(firstBlue.textContent)
+      firstBlue.textContent -= 1;
+      if (firstBlue.textContent < 0) {
+        firstBlue.textContent = 0;
+        secondBlue.textContent -= 1;
+        if (secondBlue.textContent < 0) {
+          secondBlue.textContent = 0;
+          thirdBlue.textContent -= 1;
+          if (thirdBlue.textContent < 0) {
+            thirdBlue.textContent = 0;
+          }
+        }
+      }
+    }
+    if (/^green/.test(imgCard)) {
+      //console.log(firstBlue.textContent)
+      firstGreen.textContent -= 1;
+      if (firstGreen.textContent < 0) {
+        firstGreen.textContent = 0;
+        secondGreen.textContent -= 1;
+        if (secondGreen.textContent < 0) {
+          secondGreen.textContent = 0;
+          thirdGreen.textContent -= 1;
+          if (thirdGreen.textContent < 0) {
+            thirdGreen.textContent = 0;
+          }
+        }
+      }
+    }
+    if (/^brown/.test(imgCard)) {
+      //console.log(firstBlue.textContent)
+      firstYellow.textContent -= 1;
+      if (firstYellow.textContent < 0) {
+        firstYellow.textContent = 0;
+        secondYellow.textContent -= 1;
+        if (secondYellow.textContent < 0) {
+          secondYellow.textContent = 0;
+          thirdYellow.textContent -= 1;
+          if (thirdYellow.textContent < 0) {
+            thirdYellow.textContent = 0;
+          }
+        }
+      }
+      //console.log(firstBlue.textContent)
+    }
+    if (shuffled.length > 1) {
+      shuffled.shift()
+    }
+    if (shuffled.length == 1) {
+      cardsBackImg.classList.add('backs')
+    }
+  })
 }
+
+countCards()
