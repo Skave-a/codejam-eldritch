@@ -1,5 +1,5 @@
 body {
-  background: url(../img/home-2.jpg)
+  background: url(../assets/home-2.jpg)
 }
 
 .play {
@@ -15,4 +15,9 @@ body {
 
 .d-none {
   display: none;
+}
+
+.backs {
+  cursor: auto;
+  opacity: 0.5;
 }

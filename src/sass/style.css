@@ -1,5 +1,5 @@
 body {
-  background: url(../img/home-2.jpg);
+  background: url(../assets/home-2.jpg);
 }
 
 .play {
@@ -20,6 +20,11 @@ body {
 
 .d-none {
   display: none;
+}
+
+.backs {
+  cursor: auto;
+  opacity: 0.5;
 }
 
 .play__cards {
@@ -109,6 +114,8 @@ body {
 
 .card-ups__img {
   width: 70%;
+  -webkit-box-shadow: #7bcdc7 0px 0px 15px;
+          box-shadow: #7bcdc7 0px 0px 15px;
 }
 
 .play__items {
@@ -119,6 +126,11 @@ body {
   width: 550px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.play__item {
+  width: 260px;
+  height: 330px;
 }
 
 .item__card {
@@ -138,6 +150,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 20px;
+  width: 200px;
 }
 
 .play__level {
