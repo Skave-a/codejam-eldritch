@@ -109,7 +109,7 @@ function setColorsArr() {
     if (level == "Medium") {
       for (let i = 0; i < countBlueCard; i++) {
         let min = Math.ceil(0);
-        let max = Math.floor(blueCardsData.length);
+        let max = Math.floor(blueCardsData.length - 1);
         let a = Math.floor(Math.random() * (max - min + 1)) + min;
         arrBlue.push(blueCardsData[a].id);
       }
@@ -122,7 +122,7 @@ function setColorsArr() {
       }
       for (let i = 0; i < countBlueCard; i++) {
         let min = Math.ceil(0);
-        let max = Math.floor(arrEasyBlue.length);
+        let max = Math.floor(arrEasyBlue.length - 1);
         let a = Math.floor(Math.random() * (max - min + 1)) + min;
         arrBlue.push(arrEasyBlue[a].id);
       }
@@ -135,7 +135,7 @@ function setColorsArr() {
       }
       for (let i = 0; i < countBlueCard; i++) {
         let min = Math.ceil(0);
-        let max = Math.floor(arrHardBlue.length);
+        let max = Math.floor(arrHardBlue.length - 1);
         let a = Math.floor(Math.random() * (max - min + 1)) + min;
         arrBlue.push(arrHardBlue[a].id);
       }
@@ -160,13 +160,11 @@ function setColorsArr() {
       if (arrVHardBlue.length < countBlueCard) {
 
         let different = countBlueCard - arrVHardBlue;
-        alert(different);
+        console.log(different);
       }
-
-      console.log(arrNormBlue)
       for (let i = 0; i < arrVHardBlue.length; i++) {
         let min = Math.ceil(0);
-        let max = Math.floor(arrVHardBlue.length);
+        let max = Math.floor(arrVHardBlue.length - 1);
         let a = Math.floor(Math.random() * (max - min + 1)) + min;
         arrBlue.push(arrVHardBlue[a].id);
       }
@@ -181,7 +179,7 @@ function setColorsArr() {
     if (level == "Medium") {
       for (let i = 0; i < countGreenCard; i++) {
         let min = Math.ceil(0);
-        let max = Math.floor(greenCardsData.length);
+        let max = Math.floor(greenCardsData.length - 1);
         let a = Math.floor(Math.random() * (max - min + 1)) + min;
         arrGreen.push(greenCardsData[a].id);
       }
@@ -194,7 +192,7 @@ function setColorsArr() {
       }
       for (let i = 0; i < countGreenCard; i++) {
         let min = Math.ceil(0);
-        let max = Math.floor(arrEasyGreen.length);
+        let max = Math.floor(arrEasyGreen.length - 1);
         let a = Math.floor(Math.random() * (max - min + 1)) + min;
         arrGreen.push(arrEasyGreen[a].id);
       }
@@ -207,7 +205,7 @@ function setColorsArr() {
       }
       for (let i = 0; i < countGreenCard; i++) {
         let min = Math.ceil(0);
-        let max = Math.floor(arrHardGreen.length);
+        let max = Math.floor(arrHardGreen.length - 1);
         let a = Math.floor(Math.random() * (max - min + 1)) + min;
         arrGreen.push(arrHardGreen[a].id);
       }
@@ -222,7 +220,7 @@ function setColorsArr() {
     if (level == "Medium") {
       for (let i = 0; i < countBrownCard; i++) {
         let min = Math.ceil(0);
-        let max = Math.floor(brownCardsData.length);
+        let max = Math.floor(brownCardsData.length - 1);
         let a = Math.floor(Math.random() * (max - min + 1)) + min;
         arrBrown.push(brownCardsData[a].id);
       }
@@ -235,7 +233,7 @@ function setColorsArr() {
       }
       for (let i = 0; i < countBrownCard; i++) {
         let min = Math.ceil(0);
-        let max = Math.floor(arrEasyBrown.length);
+        let max = Math.floor(arrEasyBrown.length - 1);
         let a = Math.floor(Math.random() * (max - min + 1)) + min;
         arrBrown.push(arrEasyBrown[a].id);
       }
@@ -248,7 +246,7 @@ function setColorsArr() {
       }
       for (let i = 0; i < countBrownCard; i++) {
         let min = Math.ceil(0);
-        let max = Math.floor(arrHardBrown.length);
+        let max = Math.floor(arrHardBrown.length - 1);
         let a = Math.floor(Math.random() * (max - min + 1)) + min;
         arrBrown.push(arrHardBrown[a].id);
       }
@@ -259,7 +257,6 @@ function setColorsArr() {
   arrOfCards = setBrownArr().concat(setBlueArr(), setGreenArr())
   shuffled = [];
   shuffled = arrOfCards.sort(() => Math.random() - 0.5);
-  //console.log(shuffled)
   return shuffled;
 }
 
@@ -272,7 +269,6 @@ cardsBackImg.addEventListener('click', () => {
   }
 
   let imgCard = shuffled[0];
-  //console.log(imgCard)
 
   cardsUp.innerHTML = `<img src="src/assets/MythicCards/${imgCard}.png" alt="card-up" class="card-ups__img">`;
   if (/^blue/.test(imgCard)) {
