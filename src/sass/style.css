@@ -27,6 +27,22 @@ body {
   opacity: 0.5;
 }
 
+.play__button {
+  border: 3px solid #122a54;
+  -webkit-box-shadow: 0 0 15px #7bcdc7;
+          box-shadow: 0 0 15px #7bcdc7;
+  padding: 10px;
+  background: #00000036;
+  border-radius: 5px;
+  color: white;
+  font-size: 33px;
+  cursor: pointer;
+  width: 212px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
 .play__cards {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,6 +55,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 20px;
+  position: relative;
+  height: 701px;
 }
 
 .cards__count {
