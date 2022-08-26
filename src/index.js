@@ -62,8 +62,6 @@ playLevelsAll.forEach((item, i) => {
     item.style.border = "3px solid #122a54";
     item.style.boxShadow = "0 0 15px rgb(123 205 199)";
 
-
-
     if (item.textContent == 'Medium') {
       level = 'Medium';
     } else if (item.textContent == 'Easy') {
@@ -473,8 +471,7 @@ cardsBackImg.addEventListener('click', () => {
   }
   if (shuffled.length > 1) {
     shuffled.shift()
-  }
-  if (shuffled.length == 1) {
+  } else {
     cardsBackImg.classList.add('backs')
   }
 })
