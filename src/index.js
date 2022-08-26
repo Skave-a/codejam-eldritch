@@ -142,7 +142,6 @@ function setColorsArr() {
     } else if (level == "Very high") {
       let arrVHardBlue = [];
       let arrNormBlue = [];
-      countBlueCard
       for (let i = 0; i < blueCardsData.length; i++) {
         if (blueCardsData[i].difficulty != 'easy') {
           if (blueCardsData[i].difficulty != 'normal') {
@@ -158,9 +157,40 @@ function setColorsArr() {
         }
       }
       if (arrVHardBlue.length < countBlueCard) {
-
         let different = countBlueCard - arrVHardBlue;
         console.log(different);
+      }
+      for (let i = 0; i < arrVHardBlue.length; i++) {
+        let min = Math.ceil(0);
+        let max = Math.floor(arrVHardBlue.length - 1);
+        let a = Math.floor(Math.random() * (max - min + 1)) + min;
+        arrBlue.push(arrVHardBlue[a].id);
+      }
+    } else if (level == "Very easy") {
+      let arrVHardBlue = [];
+      let arrNormBlue = [];
+      for (let i = 0; i < blueCardsData.length; i++) {
+        if (blueCardsData[i].difficulty != 'hard') {
+          if (blueCardsData[i].difficulty != 'normal') {
+            arrVHardBlue.push(blueCardsData[i]);
+          }
+        }
+      }
+      for (let i = 0; i < blueCardsData.length; i++) {
+        if (blueCardsData[i].difficulty != 'easy') {
+          if (blueCardsData[i].difficulty != 'hard') {
+            arrNormBlue.push(blueCardsData[i]);
+          }
+        }
+      }
+      if (arrVHardBlue.length < countBlueCard) {
+        let different = countBlueCard - arrVHardBlue.length;
+        for (let i = 0; i < different; i++) {
+          let min = Math.ceil(0);
+          let max = Math.floor(different);
+          let a = Math.floor(Math.random() * (max - min + 1)) + min;
+          arrBlue.push(arrNormBlue[a].id);
+        }
       }
       for (let i = 0; i < arrVHardBlue.length; i++) {
         let min = Math.ceil(0);
@@ -209,6 +239,70 @@ function setColorsArr() {
         let a = Math.floor(Math.random() * (max - min + 1)) + min;
         arrGreen.push(arrHardGreen[a].id);
       }
+    } else if (level == "Very high") {
+      let arrVHardGreen = [];
+      let arrNormGreen = [];
+      for (let i = 0; i < greenCardsData.length; i++) {
+        if (greenCardsData[i].difficulty != 'easy') {
+          if (greenCardsData[i].difficulty != 'normal') {
+            arrVHardGreen.push(greenCardsData[i]);
+          }
+        }
+      }
+      for (let i = 0; i < greenCardsData.length; i++) {
+        if (greenCardsData[i].difficulty != 'easy') {
+          if (greenCardsData[i].difficulty != 'hard') {
+            arrNormGreen.push(greenCardsData[i]);
+          }
+        }
+      }
+      if (arrVHardGreen.length < countGreenCard) {
+        let different = countGreenCard - arrVHardGreen.length;
+        for (let i = 0; i < different; i++) {
+          let min = Math.ceil(0);
+          let max = Math.floor(different);
+          let a = Math.floor(Math.random() * (max - min + 1)) + min;
+          arrGreen.push(arrNormGreen[a].id);
+        }
+      }
+      for (let i = 0; i < arrVHardGreen.length; i++) {
+        let min = Math.ceil(0);
+        let max = Math.floor(arrVHardGreen.length - 1);
+        let a = Math.floor(Math.random() * (max - min + 1)) + min;
+        arrGreen.push(arrVHardGreen[a].id);
+      }
+    } else if (level == "Very easy") {
+      let arrVHardGreen = [];
+      let arrNormGreen = [];
+      for (let i = 0; i < greenCardsData.length; i++) {
+        if (greenCardsData[i].difficulty != 'hard') {
+          if (greenCardsData[i].difficulty != 'normal') {
+            arrVHardGreen.push(greenCardsData[i]);
+          }
+        }
+      }
+      for (let i = 0; i < greenCardsData.length; i++) {
+        if (greenCardsData[i].difficulty != 'easy') {
+          if (greenCardsData[i].difficulty != 'hard') {
+            arrNormGreen.push(greenCardsData[i]);
+          }
+        }
+      }
+      if (arrVHardGreen.length < countGreenCard) {
+        let different = countGreenCard - arrVHardGreen.length;
+        for (let i = 0; i < different; i++) {
+          let min = Math.ceil(0);
+          let max = Math.floor(different);
+          let a = Math.floor(Math.random() * (max - min + 1)) + min;
+          arrGreen.push(arrNormGreen[a].id);
+        }
+      }
+      for (let i = 0; i < arrVHardGreen.length; i++) {
+        let min = Math.ceil(0);
+        let max = Math.floor(arrVHardGreen.length - 1);
+        let a = Math.floor(Math.random() * (max - min + 1)) + min;
+        arrGreen.push(arrVHardGreen[a].id);
+      }
     }
     return arrGreen;
   }
@@ -249,6 +343,70 @@ function setColorsArr() {
         let max = Math.floor(arrHardBrown.length - 1);
         let a = Math.floor(Math.random() * (max - min + 1)) + min;
         arrBrown.push(arrHardBrown[a].id);
+      }
+    } else if (level == "Very high") {
+      let arrVHardBrown = [];
+      let arrNormBrown = [];
+      for (let i = 0; i < brownCardsData.length; i++) {
+        if (brownCardsData[i].difficulty != 'easy') {
+          if (brownCardsData[i].difficulty != 'normal') {
+            arrVHardBrown.push(brownCardsData[i]);
+          }
+        }
+      }
+      for (let i = 0; i < brownCardsData.length; i++) {
+        if (brownCardsData[i].difficulty != 'easy') {
+          if (brownCardsData[i].difficulty != 'hard') {
+            arrNormBrown.push(brownCardsData[i]);
+          }
+        }
+      }
+      if (arrVHardBrown.length < countBrownCard) {
+        let different = countBrownCard - arrVHardBrown.length;
+        for (let i = 0; i < different; i++) {
+          let min = Math.ceil(0);
+          let max = Math.floor(different);
+          let a = Math.floor(Math.random() * (max - min + 1)) + min;
+          arrBrown.push(arrNormBrown[a].id);
+        }
+      }
+      for (let i = 0; i < arrVHardBrown.length; i++) {
+        let min = Math.ceil(0);
+        let max = Math.floor(arrVHardBrown.length - 1);
+        let a = Math.floor(Math.random() * (max - min + 1)) + min;
+        arrBrown.push(arrVHardBrown[a].id);
+      }
+    } else if (level == "Very easy") {
+      let arrVHardBrown = [];
+      let arrNormBrown = [];
+      for (let i = 0; i < brownCardsData.length; i++) {
+        if (brownCardsData[i].difficulty != 'hard') {
+          if (brownCardsData[i].difficulty != 'normal') {
+            arrVHardBrown.push(brownCardsData[i]);
+          }
+        }
+      }
+      for (let i = 0; i < brownCardsData.length; i++) {
+        if (brownCardsData[i].difficulty != 'easy') {
+          if (brownCardsData[i].difficulty != 'hard') {
+            arrNormBrown.push(brownCardsData[i]);
+          }
+        }
+      }
+      if (arrVHardBrown.length < countBrownCard) {
+        let different = countBrownCard - arrVHardBrown.length;
+        for (let i = 0; i < different; i++) {
+          let min = Math.ceil(0);
+          let max = Math.floor(different);
+          let a = Math.floor(Math.random() * (max - min + 1)) + min;
+          arrBrown.push(arrNormBrown[a].id);
+        }
+      }
+      for (let i = 0; i < arrVHardBrown.length; i++) {
+        let min = Math.ceil(0);
+        let max = Math.floor(arrVHardBrown.length - 1);
+        let a = Math.floor(Math.random() * (max - min + 1)) + min;
+        arrBrown.push(arrVHardBrown[a].id);
       }
     }
     return arrBrown;
