@@ -54,9 +54,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .card-ups__img {
   width: 70%;
   box-shadow: rgb(123, 205, 199) 0px 0px 15px;
+  z-index: 2;
+}
+
+.card-ups__load {
+  position: absolute;
+  top: 120px;
+  z-index: 1;
 }
