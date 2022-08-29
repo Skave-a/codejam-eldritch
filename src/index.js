@@ -367,7 +367,8 @@ function setColorsArr() {
 
 cardsBackImg.addEventListener('click', () => {
   let imgCard = deck[0];
-  cardsUp.innerHTML = `<img src="src/assets/MythicCards/${imgCard}.png" alt="card-up" class="card-ups__img">`;
+  cardsUp.innerHTML = `<img src="src/assets/MythicCards/${imgCard}.png" alt="card-up" class="card-ups__img">
+  <img src="src/assets/Ghost.gif" alt="card-up" class="card-ups__load">`;
   if (/^blue/.test(imgCard)) {
     firstBlue.textContent -= 1;
     if (firstBlue.textContent < 0) {
