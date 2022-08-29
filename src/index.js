@@ -42,6 +42,7 @@ cardsOfMonster.forEach((item, i) => {
     item.style.border = "3px solid #122a54";
     item.style.boxShadow = "0 0 15px rgb(123 205 199)";
     monster = ancientsData[i].name;
+    console.log(`Выбран - ${monster}`)
   })
 })
 
@@ -67,6 +68,7 @@ playLevelsAll.forEach((item, i) => {
     } else if (item.textContent == 'Very high') {
       level = 'Very high';
     }
+    console.log(`Выбран уровень - ${level}`)
     setColorsArr();
   })
 })
@@ -276,53 +278,79 @@ function setColorsArr() {
   // start 
   let arrBlue = []; let arrGreen = []; let arrBrown = [];
   if (level == "Medium") {
-    arrBlue = blueCardsData;
-    arrGreen = greenCardsData;
-    arrBrown = brownCardsData;
+    arrBlue = blueCardsData; arrGreen = greenCardsData; arrBrown = brownCardsData;
   } else if (level == "Easy") {
-    arrBlue = arrEasyBlue;
-    arrGreen = arrEasyGreen;
-    arrBrown = arrEasyBrown;
+    arrBlue = arrEasyBlue; arrGreen = arrEasyGreen; arrBrown = arrEasyBrown;
   } else if (level == "High") {
-    arrBlue = arrHardBlue;
-    arrGreen = arrHardGreen;
-    arrBrown = arrHardBrown;
+    arrBlue = arrHardBlue; arrGreen = arrHardGreen; arrBrown = arrHardBrown;
   } else if (level == "Very high") {
-    arrBlue = arrVHardBlue;
-    arrGreen = arrVHardGreen;
-    arrBrown = arrVHardBrown;
+    arrBlue = arrVHardBlue; arrGreen = arrVHardGreen; arrBrown = arrVHardBrown;
   } else if (level == "Very easy") {
-    arrBlue = arrVEasyBlue;
-    arrGreen = arrVEasyGreen;
-    arrBrown = arrVEasyBrown;
+    arrBlue = arrVEasyBlue; arrGreen = arrVEasyGreen; arrBrown = arrVEasyBrown;
   }
 
-  for (let i = 0; i < +firstBlue.textContent; i++) {
-    arrBlue1.push(arrBlue[Math.floor(Math.random() * (arrBlue.length))].id);
+
+  let arrBlueCard = _.shuffle(_.range(0, arrBlue.length)).slice(0, countBlueCard);
+  let arrGreenCard = _.shuffle(_.range(0, arrGreen.length)).slice(0, countGreenCard);
+  let arrBrownCard = _.shuffle(_.range(0, arrBrown.length)).slice(0, countBrownCard);
+
+
+  if (firstBlue.textContent > 0) {
+    for (let a = 0; a < firstBlue.textContent; a++) {
+      arrBlue1.push(arrBlue[arrBlueCard[0]].id);
+      arrBlueCard.shift()
+    }
   }
-  for (let i = 0; i < +firstGreen.textContent; i++) {
-    arrGreen1.push(arrGreen[Math.floor(Math.random() * (arrGreen.length))].id);
+  if (secondBlue.textContent > 0) {
+    for (let a = 0; a < secondBlue.textContent; a++) {
+      arrBlue2.push(arrBlue[arrBlueCard[0]].id);
+      arrBlueCard.shift()
+    }
   }
-  for (let i = 0; i < +firstBrown.textContent; i++) {
-    arrBrown1.push(arrBrown[Math.floor(Math.random() * (arrBrown.length))].id);
+  if (thirdBlue.textContent > 0) {
+    for (let a = 0; a < thirdBlue.textContent; a++) {
+      arrBlue3.push(arrBlue[arrBlueCard[0]].id);
+      arrBlueCard.shift()
+    }
   }
-  for (let i = 0; i < +secondBlue.textContent; i++) {
-    arrBlue2.push(arrBlue[Math.floor(Math.random() * (arrBlue.length))].id);
+
+  if (firstGreen.textContent > 0) {
+    for (let a = 0; a < firstGreen.textContent; a++) {
+      arrGreen1.push(arrGreen[arrGreenCard[0]].id);
+      arrGreenCard.shift()
+    }
   }
-  for (let i = 0; i < +secondGreen.textContent; i++) {
-    arrGreen2.push(arrGreen[Math.floor(Math.random() * (arrGreen.length))].id);
+  if (secondGreen.textContent > 0) {
+    for (let a = 0; a < secondGreen.textContent; a++) {
+      console.log()
+      arrGreen2.push(arrGreen[arrGreenCard[0]].id);
+      arrGreenCard.shift()
+    }
   }
-  for (let i = 0; i < +secondBrown.textContent; i++) {
-    arrBrown2.push(arrBrown[Math.floor(Math.random() * (arrBrown.length))].id);
+  if (thirdGreen.textContent > 0) {
+    for (let a = 0; a < thirdGreen.textContent; a++) {
+      arrGreen3.push(arrGreen[arrGreenCard[0]].id);
+      arrGreenCard.shift()
+    }
   }
-  for (let i = 0; i < +thirdBlue.textContent; i++) {
-    arrBlue3.push(arrBlue[Math.floor(Math.random() * (arrBlue.length))].id);
+
+  if (firstBrown.textContent > 0) {
+    for (let a = 0; a < firstBrown.textContent; a++) {
+      arrBrown1.push(arrBrown[arrBrownCard[0]].id);
+      arrBrownCard.shift()
+    }
   }
-  for (let i = 0; i < +thirdGreen.textContent; i++) {
-    arrGreen3.push(arrGreen[Math.floor(Math.random() * (arrGreen.length))].id);
+  if (secondBrown.textContent > 0) {
+    for (let a = 0; a < secondBrown.textContent; a++) {
+      arrBrown2.push(arrBrown[arrBrownCard[0]].id);
+      arrBrownCard.shift()
+    }
   }
-  for (let i = 0; i < +thirdBrown.textContent; i++) {
-    arrBrown3.push(arrBrown[Math.floor(Math.random() * (arrBrown.length))].id);
+  if (thirdBrown.textContent > 0) {
+    for (let a = 0; a < thirdBrown.textContent; a++) {
+      arrBrown3.push(arrBrown[arrBrownCard[0]].id);
+      arrBrownCard.shift()
+    }
   }
 
   let arrOfCards1 = arrBlue1.concat(arrGreen1, arrBrown1)
@@ -333,6 +361,7 @@ function setColorsArr() {
   arrOfCards3.sort(() => Math.random() - 0.5);
 
   deck = arrOfCards1.concat(arrOfCards2, arrOfCards3);
+  console.log(`Колода состоит из - ${deck}`)
   return deck;
 }
 
@@ -385,6 +414,7 @@ cardsBackImg.addEventListener('click', () => {
     deck.shift()
   } else {
     cardsBackImg.classList.add('backs')
+    console.log('Thanks for game❤️. Choose another settings')
   }
 })
 
