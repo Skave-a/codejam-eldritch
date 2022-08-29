@@ -420,3 +420,8 @@ cardsBackImg.addEventListener('click', () => {
 })
 
 playButton.addEventListener('click', () => location.reload())
+
+window.onload = function () {
+  let preloader = document.getElementById("preloader");
+  preloader.style.display = "none";
+}
