@@ -99,9 +99,9 @@ function setColorsArr() {
   let countBlueCard = +firstBlue.textContent + +secondBlue.textContent + +thirdBlue.textContent;
 
   let arrBlue1 = []; let arrBlue2 = []; let arrBlue3 = [];
-  console.log('%cMyProject%cline:101%carrBlue3', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(114, 83, 52);padding:3px;border-radius:2px', arrBlue3)
-  console.log('%cMyProject%cline:101%carrBlue2', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(248, 147, 29);padding:3px;border-radius:2px', arrBlue2)
-  console.log('%cMyProject%cline:101%carrBlue1', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(17, 63, 61);padding:3px;border-radius:2px', arrBlue1)
+
+
+
   let arrGreen1 = []; let arrGreen2 = []; let arrGreen3 = [];
   let arrBrown1 = []; let arrBrown2 = []; let arrBrown3 = [];
 
@@ -290,7 +290,7 @@ function setColorsArr() {
     arrBlue = arrVHardBlue; arrGreen = arrVHardGreen; arrBrown = arrVHardBrown;
   } else if (level == "Very easy") {
     arrBlue = arrVEasyBlue; arrGreen = arrVEasyGreen; arrBrown = arrVEasyBrown;
-    console.log('%cMyProject%cline:292%carrVEasyBlue', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(23, 44, 60);padding:3px;border-radius:2px', arrVEasyBlue)
+
   }
 
 
@@ -357,13 +357,13 @@ function setColorsArr() {
   }
 
   let arrOfCards1 = arrBlue1.concat(arrGreen1, arrBrown1)
-  console.log('%cMyProject%cline:359%carrOfCards1', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(17, 63, 61);padding:3px;border-radius:2px', arrOfCards1)
+
   arrOfCards1.sort(() => Math.random() - 0.5);
   let arrOfCards2 = arrBlue2.concat(arrGreen2, arrBrown2)
-  console.log('%cMyProject%cline:362%carrOfCards2', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(118, 77, 57);padding:3px;border-radius:2px', arrOfCards2)
+
   arrOfCards2.sort(() => Math.random() - 0.5);
   let arrOfCards3 = arrBlue3.concat(arrGreen3, arrBrown3)
-  console.log('%cMyProject%cline:365%carrOfCards3', 'color:#fff;background:#ee6f57;padding:3px;border-radius:2px', 'color:#fff;background:#1f3c88;padding:3px;border-radius:2px', 'color:#fff;background:rgb(248, 214, 110);padding:3px;border-radius:2px', arrOfCards3)
+
   arrOfCards3.sort(() => Math.random() - 0.5);
 
   deck = arrOfCards1.concat(arrOfCards2, arrOfCards3);
